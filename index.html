@@ -449,8 +449,8 @@ img,svg{ max-width:100%; display:block; }
 .scale{ display:grid; grid-template-columns:repeat(5,1fr); gap:.4rem; }
 .scale label{ position:relative; display:grid; place-items:center; min-height:56px; cursor:pointer;
   background:var(--paper); border:2px solid var(--ink); border-radius:14px; font-family:var(--f-display); font-weight:700; font-size:1.05rem; }
-.scale label:has(input:checked), .scale label.is-picked{ background:var(--ink); color:#fff; }
-.scale label:has(input:focus-visible){ outline:3px solid var(--ink); outline-offset:2px; }
+.scale label:has(input:checked), .scale label.is-picked{ background:var(--lavanda); color:var(--ink); border-color:var(--action); }
+.scale label:has(input:focus-visible){ outline:3px solid var(--action); outline-offset:2px; }
 .scale input{ position:absolute; inset:0; opacity:0; width:100%; height:100%; margin:0; cursor:pointer; }
 .ends{ display:flex; justify-content:space-between; font-size:.78rem; color:var(--ink-3); margin-top:.4rem; }
 .qa{ display:flex; align-items:center; gap:.8rem; margin-top:1.2rem; }
@@ -771,14 +771,14 @@ body.usando-teclado .so-teclado{ position:static; width:auto; height:auto; min-h
 .escala-t{font:700 1rem/1.4 var(--f-display);color:var(--ink);margin-bottom:14px}
 .scale{gap:7px}
 .scale label{min-height:51px;border-radius:12px;font-size:1.25rem;transition:transform .12s,box-shadow .12s}
-.scale label:nth-child(1){background:#F5D8D1}.scale label:nth-child(2){background:#F5E3CD}.scale label:nth-child(3){background:var(--amarelo)}.scale label:nth-child(4){background:#DCEACD}.scale label:nth-child(5){background:var(--verde)}
-.scale label:has(input:checked),.scale label.is-picked{color:var(--ink);outline:3px solid var(--action);outline-offset:2px;transform:translateY(-3px)}
-.scale label:hover{box-shadow:0 3px 0 var(--ink);transform:translateY(-2px)}
+.scale label{background:var(--paper);color:var(--ink)}
+.scale label:has(input:checked),.scale label.is-picked{background:var(--lavanda);color:var(--ink);border-color:var(--action);outline:2px solid var(--action);outline-offset:2px;transform:translateY(-2px)}
+.scale label:hover{box-shadow:0 2px 0 var(--line);border-color:var(--action);transform:translateY(-1px)}
 .ends{font-size:.75rem;margin-top:10px}
 .done .escala-ok{padding:18px 14px;margin-top:24px;border:1px solid #9DBF8D;border-radius:14px;background:#EBF5E6;color:#26581C;font-size:1rem;line-height:1.5;font-weight:700;outline:none}
 .indicar-t{font-size:.9375rem;line-height:1.6}
-#btnCompartilhar{gap:10px;background:var(--verde);color:var(--ink);font-size:.9375rem}
-#btnCompartilhar:hover{background:#9DCB91}
+#btnCompartilhar{gap:10px;background:var(--action);color:var(--paper);font-size:.9375rem}
+#btnCompartilhar:hover{background:var(--action-dark)}
 .whatsapp-icon{width:22px;height:22px;flex:none;fill:currentColor}
 #linkContato{display:inline-flex;align-items:center;gap:8px;min-height:44px}
 #linkContato .whatsapp-icon{width:18px;height:18px}
@@ -792,6 +792,20 @@ body.usando-teclado .so-teclado{ position:static; width:auto; height:auto; min-h
  .landing-v3 .grab{padding:24px 14px;border-radius:24px}.grab-grid{gap:22px}.landing-v3 .grab h2{font-size:1.8rem;line-height:1.1;max-width:19ch}.landing-v3 .grab .say{font-size:.875rem;line-height:1.6;margin-top:14px}.grab .v2-eyebrow{font-size:.8125rem;margin-bottom:12px}.panel{padding:18px 14px;border-radius:18px}.panel .ps{font-size:.8125rem;line-height:1.5}.f{margin-top:16px}.f label{font-size:.875rem}.f input{font-size:16px;min-height:48px;padding:11px 12px;border-radius:11px}.tg button{min-height:44px;font-size:.8125rem}.prefer{font-size:.75rem}.cons{min-height:0;margin-top:14px;gap:8px}.cons label{font-size:.75rem!important;line-height:1.55}.cons input{width:18px;height:18px}.foot-note{font-size:.6875rem;line-height:1.6;margin-top:12px}.err{font-size:.75rem}#leadSubmit{font-size:.9375rem;min-height:49px;padding:12px 16px}#stepSurvey legend{font-size:1.2rem;margin-bottom:14px}#stepSurvey .opts{gap:8px}#stepSurvey .opt{font-size:.875rem;min-height:48px;padding:11px 10px;gap:9px}.survey-confirm{padding:12px;margin-bottom:18px;gap:10px}.survey-welcome h3{font-size:1.125rem}.survey-welcome .ps{font-size:.8125rem}#stepSurvey .stop{margin:18px 0 16px}.grab:has(#stepSurvey:not([hidden])) .capture-intro,.grab:has(#stepDone:not([hidden])) .capture-intro{display:none}.grab:has(#stepSurvey:not([hidden])) .grab-grid,.grab:has(#stepDone:not([hidden])) .grab-grid{gap:0}#doneTitle{font-size:1.35rem}.done{padding:0}.done .mk-done{width:48px;height:48px;margin-bottom:14px}#doneText{font-size:.875rem}.escala{padding:16px 10px;margin-top:20px}.escala-t{font-size:.9375rem}.scale{gap:6px}.scale label{font-size:1.125rem;min-height:48px}.indicar{margin-top:20px}.indicar-t{font-size:.875rem}#btnCompartilhar{font-size:.875rem;padding-inline:10px}.faq summary{font-size:.9375rem}.faq .a{font-size:.875rem}
 }
 @media(prefers-reduced-motion:reduce){.v3-more summary svg,.scale label{transition:none}.scale label:hover,.scale label.is-picked,.scale label:has(input:checked){transform:none}}
+
+
+/* Após a nota, o compartilhamento passa a ser a ação principal. */
+.indicar-title{font:700 1.2rem/1.25 var(--f-display);letter-spacing:-.025em;margin:0 auto;max-width:24ch;outline:none}
+.done .indicar-t{font:400 .9375rem/1.6 var(--f-body);margin-top:10px;color:var(--ink-2)}
+.done.is-rated .escala-ok{margin:0 auto 18px;padding:0;border:0;background:none;color:var(--ink-2);font:500 .875rem/1.6 var(--f-body);max-width:30ch}
+.done.is-rated .indicar{border:1.5px solid var(--ink);border-radius:22px;padding:26px 20px;background:var(--lavanda);margin-top:0;text-align:center}
+.done.is-rated .indicar-title{font-size:clamp(1.55rem,3vw,1.9rem);line-height:1.18;max-width:18ch}
+.done.is-rated .indicar-t{font-size:1rem;line-height:1.6;max-width:25ch;margin:14px auto 0}
+.done.is-rated #btnCompartilhar{font-size:1rem;min-height:54px;margin-top:24px;padding:13px 16px}
+.done .indicar-ok{color:var(--action-dark);font-size:.8125rem;line-height:1.6;margin-top:16px}
+#sharePanel{scroll-margin-top:96px}
+.ft .wrap,.ft nav{justify-content:center}
+@media(max-width:699px){.done.is-rated .indicar{padding:22px 14px;border-radius:18px}.done.is-rated .indicar-title{font-size:1.55rem}.done.is-rated .indicar-t{font-size:.9375rem}.done.is-rated #btnCompartilhar{font-size:.875rem;min-height:50px;padding-inline:8px;gap:8px}.done.is-rated .escala-ok{font-size:.8125rem;margin-bottom:16px}.ends{font-size:.6875rem}}
 
 </style>
 </head>
@@ -1197,7 +1211,7 @@ c-221 390 -339 914 -333 1475 1 136 -1 186 -11 198 -18 21 -28 19 -60 -13z"/>
       <div class="grab-grid">
         <div class="capture-intro">
           <p class="v2-eyebrow">GOSTOU DA PROPOSTA?</p><h2>Receba o convite<br>para usar o Guiadoo.</h2>
-          <p class="say">O Guiadoo está em construção. Entre na lista para saber quando os primeiros acessos abrirem.</p>
+          <p class="say">Entre na lista para estar entre as primeiras pessoas a usar o Guiadoo.</p>
         </div>
 
         <div class="panel">
@@ -1312,22 +1326,23 @@ c-221 390 -339 914 -333 1475 1 136 -1 186 -11 198 -18 21 -28 19 -60 -13z"/>
           </div>
 
           <div id="stepDone" class="done" hidden tabindex="-1">
+            <div id="doneIntro">
             <div class="mk-done" aria-hidden="true">
               <svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 12.5l5.2 5.2L20 6.6" fill="none" stroke="#111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3 id="doneTitle">Pronto. Você está na lista prioritária!</h3>
-            <p id="doneText"><strong>Assim que abrirmos os próximos acessos, chamamos você no WhatsApp.</strong></p><p id="donePreview" class="preview-note" hidden>Esta é uma prévia: nenhum cadastro ou resposta foi enviado.</p>
+            <p id="doneText"><strong>Assim que abrirmos os próximos acessos, chamamos você no WhatsApp.</strong></p></div><p id="donePreview" class="preview-note" hidden>Esta é uma prévia: nenhum cadastro ou resposta foi enviado.</p>
 
             <div id="escalaWrap" class="escala">
-              <p class="escala-t">O quanto resolver isso seria útil para você hoje?</p>
-              <div class="scale" role="group" aria-label="De 1 a 5, o quanto isso seria útil">
+              <p class="escala-t">O quanto o Guiadoo ajudaria na sua rotina?</p>
+              <div class="scale" role="group" aria-label="De 1 a 5, o quanto o Guiadoo ajudaria na sua rotina">
                 <label><input type="radio" name="product_interest" value="1">1</label>
                 <label><input type="radio" name="product_interest" value="2">2</label>
                 <label><input type="radio" name="product_interest" value="3">3</label>
                 <label><input type="radio" name="product_interest" value="4">4</label>
                 <label><input type="radio" name="product_interest" value="5">5</label>
               </div>
-              <div class="ends"><span>Pouco útil</span><span>Muito útil</span></div>
+              <div class="ends"><span>Ajudaria pouco</span><span>Ajudaria muito</span></div>
             </div>
 
             <p id="escalaObrigada" class="escala-ok" role="status" tabindex="-1" hidden>Obrigado por ajudar o Guiadoo, até breve!</p>
@@ -1336,10 +1351,10 @@ c-221 390 -339 914 -333 1475 1 136 -1 186 -11 198 -18 21 -28 19 -60 -13z"/>
                  tudo e recebeu a confirmação. O link compartilhado leva UTM
                  própria (utm_source=indicacao), então dá para medir quantos
                  cadastros vieram de boca a boca vs. do flyer. -->
-            <div class="indicar">
-              <p class="indicar-t">Lembrou de alguém que dá aulas? Compartilhe e ajude a nossa comunidade.</p>
+            <div class="indicar" id="sharePanel">
+              <h3 class="indicar-title" id="shareTitle" tabindex="-1">Lembrou de alguém que dá aulas?</h3><p class="indicar-t">Compartilhe e ajude a nossa comunidade.</p>
               <button class="btn btn--block" type="button" id="btnCompartilhar"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.075-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.825 9.825 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.023c-.002 5.45-4.437 9.884-9.925 9.843M20.464 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.479-8.413Z"/></svg>Compartilhar no WhatsApp</button>
-              <p class="indicar-ok" id="indicarOk" hidden>Escolha no WhatsApp com quem compartilhar. 💚</p>
+              <p class="indicar-ok" id="indicarOk" hidden>Escolha no WhatsApp com quem compartilhar. 💜</p>
             </div>
           </div>
 
@@ -1352,15 +1367,13 @@ c-221 390 -339 914 -333 1475 1 136 -1 186 -11 198 -18 21 -28 19 -60 -13z"/>
   <section class="wrap" style="padding-top:clamp(46px,7vw,84px)">
     <h2 style="text-align:center">Perguntas rápidas</h2>
     <div class="faq">
-      <details><summary>Já dá para usar?</summary><div class="a">Ainda não. Estamos construindo agora, com professoras acompanhando de perto. Quem entra na lista recebe os primeiros convites.</div></details>
-      <details><summary>Preciso instalar alguma coisa?</summary><div class="a">A proposta é usar no navegador: registrar e consultar no celular; criar e editar planejamentos e relatórios no computador.</div></details>
-      <details><summary>E se a IA inventar algo sobre a criança?</summary><div class="a">A IA pode errar. A proposta é apoiar o rascunho nas observações do período, e você precisa conferir as evidências e revisar o texto antes de finalizar. Não preencha lacunas com fatos que não foram observados.</div></details>
       <details><summary>Quanto vai custar?</summary><div class="a">Ainda não definimos. A assinatura será por professora, não por escola — e quem está na lista participa dessa conversa antes.</div></details>
+      <details><summary>Já dá para usar?</summary><div class="a">Ainda não. Estamos construindo agora, com professoras acompanhando de perto. Quem entra na lista recebe os primeiros convites.</div></details>
+      <details><summary>Preciso instalar alguma coisa?</summary><div class="a">O acesso será pelo navegador, sem precisar instalar. Basta fazer um cadastro simples e entrar com seu login e senha. Vamos ajudar você nos primeiros passos. No celular, registre e consulte; no computador, crie e edite planejamentos e relatórios.</div></details>
+      <details><summary>E se a IA inventar algo sobre a criança?</summary><div class="a">A IA pode errar. A proposta é apoiar o rascunho nas observações do período, e você precisa conferir as evidências e revisar o texto antes de finalizar. Não preencha lacunas com fatos que não foram observados.</div></details>
       <details><summary>E os dados das crianças?</summary><div class="a">Nesta página, a demonstração usa apenas exemplos fictícios. O cadastro pede seu nome e contato; não envie dados de crianças. Consulte a política de privacidade antes de se cadastrar.</div></details>
-      <details><summary>Como os professores participam dessa construção?</summary><div class="a">Temos um grupo de educadoras acompanhando o desenvolvimento de perto, testando os recursos na rotina real e dando feedbacks contínuos para garantir que a ferramenta faça sentido na prática pedagógica.</div></details>
-      <!-- A afirmação de conformidade integral e criptografia de todos os dados depende de validação antes de ser publicada. -->
-      <details><summary>A ferramenta está em conformidade com a LGPD (Lei Geral de Proteção de Dados)?</summary><div class="a">O Guiadoo está em construção, com atenção à privacidade e à segurança dos dados. Antes da abertura dos acessos, as medidas de proteção e os processos de tratamento de dados precisam ser validados e detalhados na política de privacidade.</div></details>
-      <details><summary>Preciso ter muita facilidade com tecnologia para conseguir usar?</summary><div class="a">Não. A plataforma foi desenhada para ser simples e intuitiva, focada em economizar o tempo da professora na elaboração de planejamentos e relatórios, sem exigir conhecimentos técnicos avançados.</div></details>
+      <details><summary>A ferramenta está em conformidade com a LGPD (Lei Geral de Proteção de Dados)?</summary><div class="a">O Guiadoo foi construído com atenção à privacidade e à segurança dos dados. Antes da abertura dos acessos, as medidas de proteção e os processos de tratamento de dados precisam ser validados e detalhados na política de privacidade.</div></details>
+      <details><summary>Preciso ter muita facilidade com tecnologia para conseguir usar?</summary><div class="a">A plataforma foi desenhada para ser simples e intuitiva, focada em economizar o tempo da professora na elaboração de planejamentos e relatórios, sem exigir conhecimentos técnicos avançados.</div></details>
     </div>
   </section>
 
@@ -1375,11 +1388,10 @@ c-221 390 -339 914 -333 1475 1 136 -1 186 -11 198 -18 21 -28 19 -60 -13z"/>
 
 <footer class="ft">
   <div class="wrap">
-    <span>© <span id="year">2026</span> Guiadoo · Florianópolis</span>
     <nav>
       <a href="#como-funciona">Sobre o produto</a>
       <a href="https://guiadoo.com.br/privacidade/">Privacidade</a>
-      <a href="https://wa.me/5511996210813" id="linkContato" target="_blank" rel="noopener noreferrer" aria-label="Falar com o Guiadoo pelo WhatsApp: (11) 99621-0813"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.075-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.825 9.825 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.023c-.002 5.45-4.437 9.884-9.925 9.843M20.464 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.479-8.413Z"/></svg>WhatsApp · (11) 99621-0813</a>
+      <a href="https://wa.me/5511996210813?text=Ol%C3%A1%21%20Estou%20conhecendo%20o%20Guiadoo%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas." id="linkContato" target="_blank" rel="noopener noreferrer" aria-label="Falar com o Guiadoo pelo WhatsApp: (11) 99621-0813"><svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.075-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.825 9.825 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.023c-.002 5.45-4.437 9.884-9.925 9.843M20.464 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.479-8.413Z"/></svg>WhatsApp · (11) 99621-0813</a>
     </nav>
   </div>
 </footer>
@@ -2251,7 +2263,14 @@ reset();
     feedbackSubmitted=true;answers.product_interest=e.target.value;
     $$('input[name="product_interest"]',escalaWrap).forEach(function(el){el.closest('label').classList.toggle('is-picked',el.checked);el.disabled=true;});
     persistSurvey();track('product_interest_answered',{score:Number(e.target.value)});
-    setTimeout(function(){escalaWrap.hidden=true;const thanks=$('#escalaObrigada');thanks.hidden=false;thanks.focus({preventScroll:true});},reduced?0:350);
+    setTimeout(function(){
+      escalaWrap.hidden=true;
+      $('#doneIntro').hidden=true;
+      stepDone.classList.add('is-rated');
+      const thanks=$('#escalaObrigada');thanks.hidden=false;
+      $('#shareTitle').focus({preventScroll:true});
+      stepDone.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+    },reduced?0:350);
   });
   if(IS_PREVIEW){const note=document.createElement('p');note.className='preview-note';note.textContent='Prévia local · nenhum cadastro será enviado.';stepLead.prepend(note);}
   renderStep();
@@ -2259,7 +2278,7 @@ reset();
   /* Compartilhar abre o WhatsApp; o contato comercial usa um link separado. */
   const btnCompartilhar = $('#btnCompartilhar');
   if (btnCompartilhar) {
-    const mensagemIndicacao = 'Lembrei de você! 💡 O Guiadoo organiza nossos registros de sala e cria rascunhos de relatórios pedagógicos (do plano de aula ao relatório final). Dá uma olhada para a gente entrar na lista de espera juntos: https://guiadoo.com.br/?utm_source=indicacao&utm_medium=whatsapp&utm_campaign=boca-a-boca';
+    const mensagemIndicacao = 'Lembrei de você! 💜 O Guiadoo organiza nossos registros de sala e cria rascunhos de relatórios pedagógicos (do plano de aula ao relatório final). Dá uma olhada para a gente entrar na lista de espera juntos: https://guiadoo.com.br/?utm_source=indicacao&utm_medium=whatsapp&utm_campaign=boca-a-boca';
     btnCompartilhar.addEventListener('click', function () {
       window.open('https://wa.me/?text=' + encodeURIComponent(mensagemIndicacao), '_blank', 'noopener,noreferrer');
       track('share_clicked', {via:'whatsapp',campaign:'boca-a-boca'});
@@ -2379,10 +2398,9 @@ reset();
     }
   }, { passive: true });
 
-  $('#year').textContent = new Date().getFullYear();
 
   // Qual objeção ainda incomoda: mapeia a pergunta aberta no FAQ
-  const FAQ_SLUGS = ['early_access', 'how_it_works', 'ai_trust', 'pricing', 'privacy', 'teacher_participation', 'lgpd', 'ease_of_use'];
+  const FAQ_SLUGS = ['pricing', 'early_access', 'how_it_works', 'ai_trust', 'privacy', 'lgpd', 'ease_of_use'];
   $$('.faq details').forEach(function (d, i) {
     d.addEventListener('toggle', function () {
       if (d.open) {
